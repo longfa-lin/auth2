@@ -3,12 +3,12 @@ spring:
     oauth2:
       client:
         registration:
-          oidc-client:
+          demo:
             client-id: oidc-client
             client-secret: secret
             provider: demo-provider
             authorization-grant-type: authorization_code
-            redirect-uri: http://client:8082/login/oauth2/code/oidc-client
+            redirect-uri: http://client:8082/login/oauth2/code/demo
             scope:
               - message.read
         provider:

@@ -119,7 +119,7 @@ public class SecurityConfig {
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
                 //此客户端允许跳转的URI注册地址
                 .redirectUri("http://auth-server:8080/authorized")
-                .redirectUri("http://client:8082/login/oauth2/code/oidc-client")
+                .redirectUri("http://client:8082/login/oauth2/code/demo")
                 //此客户端允许使用的授权范围
                 .scope("message.read")
                 .scope("message.write")
