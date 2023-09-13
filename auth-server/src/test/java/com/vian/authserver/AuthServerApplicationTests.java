@@ -13,8 +13,10 @@ import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
 import org.springframework.security.oauth2.server.authorization.settings.ClientSettings;
+import org.springframework.security.oauth2.server.authorization.settings.TokenSettings;
 import org.springframework.security.provisioning.UserDetailsManager;
 
+import java.time.Duration;
 import java.util.UUID;
 
 @SpringBootTest(classes = AuthServerApplication.class)
@@ -58,6 +60,9 @@ class AuthServerApplicationTests {
                 .scope("message.read")
                 .scope("message.write")
                 .clientSettings(ClientSettings.builder().requireAuthorizationConsent(false).build())
+                .tokenSettings(TokenSettings.builder().accessTokenTimeToLive(Duration.ofMinutes(10))
+                        .refreshTokenTimeToLive(Duration.ofHours(1))
+                        .build())
                 .build();
         registeredClientRepository.save(registeredClient);
     }
