@@ -4,3 +4,9 @@ server:
 logging:
   level:
     root: debug
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.0.148.223:30346/oauth2
+    username: root
+    password: 1qazxsw2

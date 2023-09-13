@@ -11,6 +11,7 @@ spring:
             redirect-uri: http://client:8082/login/oauth2/code/demo
             scope:
               - message.read
+              - message.write
         provider:
           demo-provider:
             authorization-uri: http://auth-server:8080/oauth2/authorize

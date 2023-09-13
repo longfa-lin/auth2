@@ -31,6 +31,12 @@ public class ProductController {
         return products;
     }
 
+
+    @GetMapping("/create")
+    public String createProduct() {
+        return "success";
+    }
+
     //获取用户信息
     @GetMapping(value = "/sso/user")
     public Map<String, String> user(Principal principal) {

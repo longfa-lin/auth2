@@ -32,4 +32,14 @@ public class HelloController {
         ResponseEntity<String> exchange = restTemplate.exchange("http://res-server:8081/products", HttpMethod.GET, request, String.class);
         return exchange.getBody();
     }
+
+    @GetMapping("/create")
+    public String create(@RegisteredOAuth2AuthorizedClient OAuth2AuthorizedClient authorizedClient) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(authorizedClient.getAccessToken().getTokenValue());
+        HttpEntity<String> request = new HttpEntity<>("create", headers);
+        ResponseEntity<String> exchange = restTemplate.exchange("http://res-server:8081/create", HttpMethod.GET, request, String.class);
+        return exchange.getBody();
+    }
+
 }
