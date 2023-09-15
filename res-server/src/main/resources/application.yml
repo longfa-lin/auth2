@@ -13,4 +13,4 @@ spring:
     url: jdbc:mysql://10.0.148.223:30346/res-db
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: root
+    password: 1qazxsw2
