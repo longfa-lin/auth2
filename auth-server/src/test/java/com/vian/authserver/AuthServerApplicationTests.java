@@ -55,6 +55,7 @@ class AuthServerApplicationTests {
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
+//                .authorizationGrantType(AuthorizationGrantType.DEVICE_CODE)
                 .redirectUri("http://auth-server:8080/authorized")
                 .redirectUri("http://client:8082/login/oauth2/code/demo")
                 .scope("message.read")
